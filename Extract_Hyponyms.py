@@ -4,13 +4,17 @@ word = input("Enter a word: ")
  
 syns = wordnet.synsets(word)
 
-#print(syns)
+print(syns)
 # --WORKING FINE 
 print()
 #print(syns[0].name())
 #print(syns[0].lemmas()) --works well
 
-hn_word = wordnet.synset(syns[0].name())
+#Now to select any one sense from the given senses
+selectedSense = int(input("Enter the index of the sense you want: "))
+
+
+hn_word = wordnet.synset(syns[selectedSense].name())
 hyponyms = hn_word.hyponyms()
 
 print("The set of hyponyms is as follows: ")
