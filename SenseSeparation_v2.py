@@ -10,6 +10,7 @@ for sense in syns:
     examples = sense.examples()
     word = wn.synset(sense.name())
     hyponyms = word.hyponyms()
+    hypernyms= word.hypernyms()
     ##Printing Lemmas
     file.write("Lemmas:\t")
     for lemma in lemmaList:
@@ -29,6 +30,15 @@ for sense in syns:
     ##Printing Hyponyms
     file.write("Hyponyms:\n\n")
     for hynms in hyponyms:
+        file.write(hynms.lemmas()[0].name())
+        file.write(" - ")
+        file.write(hynms.definition())
+        file.write("\n\n")
+    file.write("\n\n")
+
+    ##Printing Hypernyms
+    file.write("Hypernyms:\n\n")
+    for hynms in hypernyms:
         file.write(hynms.lemmas()[0].name())
         file.write(" - ")
         file.write(hynms.definition())
