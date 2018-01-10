@@ -3,8 +3,15 @@ from nltk.corpus import wordnet
 word = input("Enter a word: ")
  
 syns = wordnet.synsets(word)
+print("The senses are as follows:")
+print()
 
-print(syns)
+for sense in syns:
+    print(sense.name(), sense.examples())
+
+
+
+#print(syns)
 # --WORKING FINE 
 print()
 #print(syns[0].name())
